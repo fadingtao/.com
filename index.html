@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tao • @fadingtao</title>
+<link rel="icon" type="image/svg+xml" href="tao.svg">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0d1117, #161b22);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* (for portfolio layout)
+body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 4rem;
+  overflow: hidden;
+}
+*/
+
+.profile-card {
+  width: 500px;
+  /* margin-left: 4rem; (for portfolio layout) */
+  padding: 1.5rem;
+  background: linear-gradient(145deg, #1e2128, #0d1117, #1a1f2e);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(59, 130, 246, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.profile-card.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.avatar {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+}
+
+.handle {
+  font-weight: 400;
+  color: #8b8b8b;
+}
+
+.bio {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #c0c0c0;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.bold {
+  color: #ffffff;
+}
+
+.badge-container {
+  width: 320px;
+  height: 87px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.badge {
+  width: 320px;
+  height: 87px;
+  border: none;
+  display: block;
+}
+</style>
+</head>
+<body>
+  <div class="profile-card" id="card">
+    <img src="tao.svg" alt="Tao Logo" class="avatar">
+    <div class="name">
+      Tao <span class="handle">@fadingtao</span>
+    </div>
+    <div class="bio">
+      IT Professional <span class="bold">║</span> Security & Privacy Enthusiast <span class="bold">║</span> Aspiring Cyber Security Bachelor Student
+    </div>
+    <div class="badge-container">
+      <iframe class="badge" src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=6463971" scrolling="no"></iframe>
+    </div>
+  </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.1.0/fontfaceobserver.standalone.js"></script>
+<script>
+const font = new FontFaceObserver('Plus Jakarta Sans');
+font.load().then(() => {
+  document.getElementById('card').classList.add('visible');
+});
+</script>
+</body>
+</html>
