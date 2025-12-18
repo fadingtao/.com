@@ -117,7 +117,7 @@ body {
       IT Professional <span class="bold">║</span> Security & Privacy Enthusiast <span class="bold">║</span> Aspiring Cyber Security Bachelor Student
     </div>
     <div class="badge-container">
-      <iframe class="badge" src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=6463971" scrolling="no"></iframe>
+      <iframe class="badge" scrolling="no"></iframe>
     </div>
   </div>
 
@@ -126,6 +126,7 @@ body {
 const font = new FontFaceObserver('Plus Jakarta Sans');
 font.load().then(() => {
   document.getElementById('card').classList.add('visible');
+  document.querySelector('.badge').src = 'https://tryhackme.com/api/v2/badges/public-profile?userPublicId=6463971';
 });
 </script>
 </body>
